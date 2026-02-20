@@ -10,7 +10,8 @@ Herramientas prácticas que ahorran tiempo en diagnóstico, limpieza y documenta
 
 ### 1. 📊 `system_info.py` - Informe Completo del Sistema
 
-Genera reporte detallado con toda la información del sistema.
+Genera un reporte detallado y visual, actualmente 100% funcional en Windows y parcialmente compatible con Linux.
+Permite ver el progreso en tiempo real y guarda automáticamente un archivo .txt con todo el informe.
 
 **Uso:**
 ```bash
@@ -19,134 +20,31 @@ python system_info.py > informe.txt  # Guardar en archivo
 ```
 
 **Información incluida:**
+
 - Sistema operativo y versión
-- Hardware (CPU, RAM, disco)
-- Red (IP, interfaces, estadísticas)
-- Procesos top consumidores
-- Temperaturas (si disponible)
+- CPU: modelo exacto, núcleos, uso
+- GPU: todas las tarjetas detectadas + VRAM de cada una
+- Memoria RAM y barra visual
+- Almacenamiento por partición y barra de uso
+- Red: adaptador activo, IP, SSID, velocidad
 - Batería (si aplica)
+- Placa base: fabricante y modelo
+- Tiempo de actividad (uptime)
+- Guardado automático del informe en .txt
 
 **Casos de uso:**
-- Diagnóstico remoto (cliente envía informe)
-- Documentación de equipos
-- Troubleshooting inicial
-- Auditoría de hardware
+
+- Diagnóstico remoto y documentación rápida de equipos
+- Auditoría de hardware y software
+- Soporte técnico estructurado y reproducible
 
 ---
 
-### 2. 🌐 `network_diagnostic.py` - Diagnóstico de Red
 
-Test completo de conectividad de red paso a paso.
+## EJEMPLO DE SALIDA 
+![Ejemplo de system_info.py](./docs/system_info_preview.png)
 
-**Uso:**
-```bash
-python network_diagnostic.py
-```
 
-**Tests realizados:**
-- ✅ Configuración IP local
-- ✅ Conectividad gateway
-- ✅ Conectividad internet (DNS públicos)
-- ✅ Resolución DNS
-- ✅ Puertos comunes (HTTP, HTTPS, DNS)
-- ✅ Medición latencia
-
-**Salida:** Diagnóstico claro con estado OK/FAIL y sugerencias de solución
-
-**Casos de uso:**
-- "No tengo internet" → Este script identifica dónde falla
-- Diagnóstico remoto guiado
-- Documentar problemas de red
-- Training de juniors
-
----
-
-### 3. 🧹 `cleanup_temp.py` - Limpieza Archivos Temporales
-
-Limpia archivos temporales de Windows para liberar espacio.
-
-**Uso:**
-```bash
-# Simular (ver qué se borraría)
-python cleanup_temp.py --dry-run
-
-# Ejecutar limpieza real
-python cleanup_temp.py
-```
-
-⚠️ **Ejecutar como Administrador en Windows**
-
-**Directorios limpiados:**
-- `%TEMP%` (usuario)
-- `C:\Windows\Temp`
-- Windows Update cache
-- Prefetch
-- Thumbnails cache
-
-**Seguridad:**
-- Modo simulación disponible
-- Confirmación antes de borrar
-- Manejo de errores de permisos
-- Informe detallado de espacio liberado
-
-**Casos de uso:**
-- PC con poco espacio en disco
-- Mantenimiento preventivo
-- Antes de actualizaciones grandes
-- Troubleshooting problemas disco lleno
-
----
-
-### 4. 📋 `installed_programs.py` - Lista Programas Instalados
-
-Lista todos los programas instalados en Windows con detalles.
-
-**Uso:**
-```bash
-python installed_programs.py
-python installed_programs.py > programas.txt  # Exportar
-```
-
-**Información mostrada:**
-- Nombre del programa
-- Versión
-- Editor/Fabricante
-- Fecha instalación (si disponible)
-
-**Estadísticas adicionales:**
-- Total de programas
-- Top editores
-- Programas sin versión
-
-**Casos de uso:**
-- Auditoría de software
-- Documentación pre-formateo
-- Identificar software a desinstalar
-- Comparar equipos
-- Inventario IT
-
----
-
-## 🔧 Requisitos
-
-### Python 3.6+
-
-```bash
-python --version  # Verificar versión
-```
-
-### Librería `psutil`
-
-```bash
-pip install psutil
-```
-
-O con requirements:
-```bash
-pip install -r requirements.txt
-```
-
----
 
 ## 📥 Instalación
 
@@ -161,7 +59,7 @@ pip install -r requirements.txt
 Descarga solo el script que necesites y ejecuta:
 ```bash
 pip install psutil
-python script_name.py
+python script_info.py
 ```
 
 ---
@@ -213,14 +111,23 @@ python script_name.py
 4. Comparte con tu equipo
 
 ---
+**🔜 Próximos Scripts (roadmap)**
 
-## 🔜 Próximos Scripts (roadmap)
+🌐 `network_diagnostic.py` - Diagnóstico de red paso a paso
 
-- [ ] `wifi_scanner.py` - Escanear redes WiFi cercanas
-- [ ] `driver_updater.py` - Verificar drivers desactualizados
-- [ ] `startup_optimizer.py` - Gestión programas de inicio
-- [ ] `backup_documents.py` - Backup automático carpetas importantes
-- [ ] `malware_scanner.py` - Scan básico de procesos sospechosos
+🧹 `cleanup_temp.py` - Limpieza archivos temporales Windows
+
+📋 `installed_programs.py` - Lista programas instalados Windows
+
+🖥️ `wifi_scanner.py` - Escanear redes WiFi cercanas
+
+🔄 ``driver_updater.py`` - Verificar drivers desactualizados
+
+⚡ ``startup_optimizer.py`` - Gestión programas de inicio
+
+💾 ``backup_documents.py`` - Backup automático carpetas importantes
+
+🛡️ ``malware_scanner.py`` - Scan básico de procesos sospechosos
 
 ---
 
