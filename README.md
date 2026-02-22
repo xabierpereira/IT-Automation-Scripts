@@ -52,7 +52,7 @@ Sistema operativo y versión
 
 
 ## EJEMPLO DE SALIDA 
-![Ejemplo de system_info.py](./docs/system_info_preview.png)
+![Ejemplo de system_info_visual.py](./docs/example.png)
 
 
 
