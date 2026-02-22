@@ -8,29 +8,39 @@ Herramientas prácticas que ahorran tiempo en diagnóstico, limpieza y documenta
 
 ## 📜 Scripts Disponibles
 
-### 1. 📊 `system_info.py` - Informe Completo del Sistema
+### 1. 📊 `system_info_visual.py` - Informe Completo y Muy Visual del Sistema
 
 Genera un reporte detallado y visual, actualmente 100% funcional en Windows y parcialmente compatible con Linux.
 Permite ver el progreso en tiempo real y guarda automáticamente un archivo .txt con todo el informe.
 
 **Uso:**
 ```bash
-python system_info.py
-python system_info.py > informe.txt  # Guardar en archivo
+python system_info_visual.py
+python system_info_visual.py > informe.txt  # Guardar en archivo
 ```
 
 **Información incluida:**
+Sistema operativo y versión
 
-- Sistema operativo y versión
-- CPU: modelo exacto, núcleos, uso
+- CPU: modelo exacto, núcleos físicos y lógicos, uso
+
 - GPU: todas las tarjetas detectadas + VRAM de cada una
+
 - Memoria RAM y barra visual
+
 - Almacenamiento por partición y barra de uso
+
 - Red: adaptador activo, IP, SSID, velocidad
+
 - Batería (si aplica)
+
 - Placa base: fabricante y modelo
+
 - Tiempo de actividad (uptime)
+
 - Guardado automático del informe en .txt
+
+- Visualización muy visual: barras de progreso, colores y salida en tiempo real
 
 **Casos de uso:**
 
@@ -68,7 +78,7 @@ python script_info.py
 
 ### Escenario 1: Cliente reporta "Internet lento"
 ```bash
-1. python system_info.py > cliente_sistema.txt
+1. python system_info_visual.py > cliente_sistema.txt
 2. python network_diagnostic.py
    → Identifica: DNS lento
 3. Cambiar DNS a 8.8.8.8
@@ -87,7 +97,7 @@ python script_info.py
 ### Escenario 3: Auditoría remota
 ```bash
 # Enviar al cliente por email:
-1. system_info.py
+1. system_info_visual.py
 2. installed_programs.py
 
 # Cliente ejecuta y envía .txt
@@ -197,4 +207,4 @@ Si estos scripts te ayudaron, considera:
 
 ![Visitor Count](https://komarev.com/ghpvc/?username=xabierpereira&color=blue&label=Visitas)
 
-**Última actualización:** 20 Febrero 2026
+**Última actualización:** 22 Febrero 2026
