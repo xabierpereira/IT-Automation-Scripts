@@ -69,9 +69,23 @@ pip install -r requirements.txt
 Descarga solo el script que necesites y ejecuta:
 ```bash
 pip install psutil
-python script_info.py
+python script_info_visual.py
 ```
 
+### 2. 🌐 `network_diagnostic.py` - Diagnóstico de Red Completo
+Herramienta de troubleshooting paso a paso para identificar dónde se corta la conexión.
+* **Funciones:**
+    * Verificación de IP Local y Gateway.
+    * Test de conectividad exterior (Pings a DNS públicos).
+    * Resolución de nombres (DNS).
+    * Comprobación de puertos críticos (80, 443, 53).
+    * Medición de latencia media.
+* **Compatibilidad:** Windows y Linux.
+
+**Uso:**
+```bash
+python network_diagnostic.py
+```
 ---
 
 ## 💡 Casos de Uso Reales
@@ -122,8 +136,6 @@ python script_info.py
 
 ---
 **🔜 Próximos Scripts (roadmap)**
-
-🌐 `network_diagnostic.py` - Diagnóstico de red paso a paso
 
 🧹 `cleanup_temp.py` - Limpieza archivos temporales Windows
 
