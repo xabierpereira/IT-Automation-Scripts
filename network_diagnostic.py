@@ -186,10 +186,34 @@ def main():
     
     print(f"Estado General: {status}")
     print(f"Puntuación: {puntos}/3 tests principales superados.")
-    
-    print("\n" + "=" * 60)
-    print("Autor: Xabier Pereira | github.com/xabierpereira")
-    print("=" * 60)
 
+    # ========== COMANDOS ÚTILES ==========
+    print_header("COMANDOS ÚTILES PARA TROUBLESHOOTING")
+    
+    if is_windows:
+        print("""
+💻 Windows:
+  ipconfig /all          - Ver configuración completa
+  ipconfig /flushdns     - Limpiar caché DNS
+  netsh winsock reset    - Resetear el catálogo de red
+  ping 8.8.8.8           - Probar internet básico
+  tracert google.com     - Rastrear ruta al servidor
+        """)
+    else:
+        print("""
+🐧 Linux:
+  ip addr show           - Ver interfaces y IPs
+  ip route show          - Ver tabla de rutas
+  nmcli dev status       - Estado de dispositivos (NetworkManager)
+  ping -c 4 8.8.8.8      - Probar internet
+  traceroute google.com  - Rastrear ruta
+        """)
+
+    # ========== PIE DE PÁGINA ==========
+    print("\n" + "=" * 60)
+    print("Diagnóstico completado")
+    print(f"Autor: Xabier Pereira | github.com/xabierpereira")
+    print("=" * 60)
+    
 if __name__ == "__main__":
     main()
