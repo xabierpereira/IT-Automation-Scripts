@@ -86,6 +86,9 @@ Herramienta de troubleshooting paso a paso para identificar dónde se corta la c
 ```bash
 python network_diagnostic.py
 ```
+## EJEMPLO DE SALIDA 
+![Ejemplo de network_diagnostic.py ](./docs/examplenet.png)
+
 ---
 
 ## 💡 Casos de Uso Reales
